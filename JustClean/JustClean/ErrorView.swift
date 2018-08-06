@@ -1,8 +1,8 @@
 //
 //  ErrorView.swift
-//  ListDemo
+//  JustClean
 //
-//  Created by Jitendra Deore on 21/06/18.
+//  Created by Jitendra Deore on 06/08/18.
 //  Copyright © 2018 Jitendra Deore. All rights reserved.
 //
 

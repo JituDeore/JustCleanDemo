@@ -20,6 +20,7 @@
 		A7AD43972118C98E0070183B /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AD43962118C98E0070183B /* ViewControllerExtension.swift */; };
 		A7AD439A2118D3120070183B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AD43982118D3110070183B /* ErrorView.swift */; };
 		A7AD439B2118D3120070183B /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7AD43992118D3110070183B /* ErrorView.xib */; };
+		A7AD439D2118D3870070183B /* ErrorPresentableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AD439C2118D3870070183B /* ErrorPresentableViewController.swift */; };
 		A7DCB346211889ED00150597 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DCB344211889ED00150597 /* ListTableViewCell.swift */; };
 		A7DCB347211889ED00150597 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7DCB345211889ED00150597 /* ListTableViewCell.xib */; };
 		A7DCB34921188ED200150597 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DCB34821188ED200150597 /* DetailViewController.swift */; };
@@ -43,6 +44,7 @@
 		A7AD43962118C98E0070183B /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		A7AD43982118D3110070183B /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		A7AD43992118D3110070183B /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		A7AD439C2118D3870070183B /* ErrorPresentableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresentableViewController.swift; sourceTree = "<group>"; };
 		A7DCB344211889ED00150597 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		A7DCB345211889ED00150597 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		A7DCB34821188ED200150597 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				A7DCB345211889ED00150597 /* ListTableViewCell.xib */,
 				A77899D2211867B50045D00C /* Main.storyboard */,
 				A7AD43982118D3110070183B /* ErrorView.swift */,
+				A7AD439C2118D3870070183B /* ErrorPresentableViewController.swift */,
 				A7AD43992118D3110070183B /* ErrorView.xib */,
 				A77899D5211867B60045D00C /* Assets.xcassets */,
 				A77899D7211867B60045D00C /* LaunchScreen.storyboard */,
@@ -234,6 +237,7 @@
 			files = (
 				A7DCB346211889ED00150597 /* ListTableViewCell.swift in Sources */,
 				A77899E1211873900045D00C /* ListItem.swift in Sources */,
+				A7AD439D2118D3870070183B /* ErrorPresentableViewController.swift in Sources */,
 				A7AD43972118C98E0070183B /* ViewControllerExtension.swift in Sources */,
 				A77899E5211879770045D00C /* APIService.swift in Sources */,
 				A77899E3211877B00045D00C /* List.swift in Sources */,
