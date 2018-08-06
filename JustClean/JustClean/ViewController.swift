@@ -13,10 +13,58 @@ typealias JSONItem = [String: Any]
 
 class ViewController: UIViewController {
 
+    var listItems = [ListItem](){
+        didSet{
+            tableView.reloadData()
+        }
+    }
+    var navTitle: String!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var fetchService: APIService!
+    
+    /// Lazy instantiation of refersh control
+    private lazy var refreshControl: UIRefreshControl = { [unowned self] in
+        let _refreshControl = UIRefreshControl()
+        _refreshControl.addTarget(self, action: #selector(startRefreshing), for: .valueChanged)
+        return _refreshControl
+        }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchService = APIService()
+        
+        self.edgesForExtendedLayout = []
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            // Fallback on earlier versions
+        }
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchListData()
+    }
+    
+    /// Method to fetch list data on pull to refresh.
+    @objc func startRefreshing() {
+        fetchService = APIService()
+        refreshControl.beginRefreshing()
+        listItems.removeAll()
+        fetchListData()
+    }
+    
+    /// Method to fetch list data
+    func fetchListData() {
+       // showProgress()
+        
+        fetchService.fetchData(apiURL: "https://api.themoviedb.org/3/discover/movie?api_key=1c1519996ca267ab6ebb958a0cd72555&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false") {  [weak self] (result) in
+            guard let strongSelf = self else {
+                return
+            }
 
            // strongSelf.hideProgress()
             strongSelf.refreshControl.endRefreshing()
