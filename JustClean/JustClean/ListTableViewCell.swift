@@ -14,6 +14,8 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var releaseDateLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +28,7 @@ class ListTableViewCell: UITableViewCell {
     func displayData(with listItem: ListItem) {
         self.titleLabel.text = listItem.title
         self.descriptionLabel.text = listItem.overview
+        self.releaseDateLabel.text = listItem.release_date
         let imagePath = "http://image.tmdb.org/t/p/w185" + listItem.backdrop_path
         thumbnailImageView.sd_setImage(with: URL(string: imagePath), placeholderImage: nil)
     }

@@ -19,7 +19,7 @@ struct ListItem {
     let backdrop_path: String
     let adult: Bool?
     let overview: String?
-    let release_date: String?
+    let release_date: String
     
     init?(with jsonResponse: JSONItem) {
         guard let title = jsonResponse["title"] as? String ,
