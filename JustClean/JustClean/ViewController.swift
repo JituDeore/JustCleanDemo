@@ -18,6 +18,9 @@ class ViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    
+    weak var progressView: UIActivityIndicatorView?
+    
     var navTitle: String!
     @IBOutlet weak var tableView: UITableView!
     
@@ -59,26 +62,21 @@ class ViewController: UIViewController {
     
     /// Method to fetch list data
     func fetchListData() {
-       // showProgress()
-        
+        if listItems.count == 0{
+              showProgress()
+        }
         fetchService.fetchData(apiURL: "https://api.themoviedb.org/3/discover/movie?api_key=1c1519996ca267ab6ebb958a0cd72555&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false") {  [weak self] (result) in
             guard let strongSelf = self else {
                 return
             }
-
-           // strongSelf.hideProgress()
+            strongSelf.hideProgress()
             strongSelf.refreshControl.endRefreshing()
-           // strongSelf.removeErrorView()
             switch result{
             case .success(let response):
-                //strongSelf.listItems = response.listItems
                 strongSelf.listItems.append(contentsOf: response.listItems)
-//                strongSelf.navTitle = response.title
-//                strongSelf.title = response.title
                 strongSelf.tableView.reloadData()
                 break
             case .failure(let error):
-                //self?.handlePageError(error)
                 break
             }
         }
@@ -99,10 +97,6 @@ extension ViewController : UITableViewDataSource , UITableViewDelegate{
         return listItems.count
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView()
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
@@ -110,8 +104,12 @@ extension ViewController : UITableViewDataSource , UITableViewDelegate{
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        fetchListData()
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastSectionIndex = tableView.numberOfSections - 1
+        let lastRow = tableView.numberOfRows(inSection: lastSectionIndex) - 1
+        if indexPath.section == lastSectionIndex && indexPath.row == lastRow{
+            fetchListData()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
