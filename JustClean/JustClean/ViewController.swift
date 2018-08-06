@@ -12,7 +12,9 @@ import UIKit
 typealias JSONItem = [String: Any]
 
 class ViewController: UIViewController {
-
+    
+    var errView: ErrorView?
+    
     var listItems = [ListItem](){
         didSet{
             tableView.reloadData()
@@ -71,12 +73,14 @@ class ViewController: UIViewController {
             }
             strongSelf.hideProgress()
             strongSelf.refreshControl.endRefreshing()
+            strongSelf.removeErrorView()
             switch result{
             case .success(let response):
                 strongSelf.listItems.append(contentsOf: response.listItems)
                 strongSelf.tableView.reloadData()
                 break
             case .failure(let error):
+                strongSelf.handlePageError(error)
                 break
             }
         }
