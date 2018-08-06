@@ -8,6 +8,9 @@
 
 import UIKit
 
+// This is for storing the json array ..
+typealias JSONItem = [String: Any]
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
