@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         self.descriptionLabel.text = listItem.overview
         let imagePath = "http://image.tmdb.org/t/p/w185" + listItem.poster_path
-        imageView.sd_setImage(with: URL(string: imagePath), placeholderImage: nil)
+        imageView.sd_setImage(with: URL(string: imagePath), placeholderImage: #imageLiteral(resourceName: "placeHolderImage"))
         self.title = listItem.title
         
         // Do any additional setup after loading the view.

@@ -30,6 +30,7 @@ class ListTableViewCell: UITableViewCell {
         self.descriptionLabel.text = listItem.overview
         self.releaseDateLabel.text = listItem.release_date
         let imagePath = "http://image.tmdb.org/t/p/w185" + listItem.backdrop_path
-        thumbnailImageView.sd_setImage(with: URL(string: imagePath), placeholderImage: nil)
+        thumbnailImageView.sd_setImage(with: URL(string: imagePath), placeholderImage: #imageLiteral(resourceName: "placeHolderImage"))
     }
 }
+
