@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="newshunt-bold.otf">
+            <string>Newshunt-Bold</string>
+        </array>
+        <array key="newshunt-regular.otf">
+            <string>Newshunt-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="0iD-8E-Gvd" customClass="ErrorView" customModule="ListDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="errrorIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7uo-EW-OK2">
+                    <rect key="frame" x="132" y="60" width="111" height="111"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fa9-WX-bn8">
+                    <rect key="frame" x="47.5" y="188" width="281" height="17.5"/>
+                    <fontDescription key="fontDescription" name="Newshunt-Bold" family="Newshunt" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPx-rF-hwN">
+                    <rect key="frame" x="151.5" y="241.5" width="72" height="30"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="yQb-mb-g1L"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <inset key="contentEdgeInsets" minX="19" minY="0.0" maxX="19" maxY="0.0"/>
+                    <state key="normal" title="Home">
+                        <color key="titleColor" red="0.46274509800000002" green="0.74901960779999999" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                            <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="tappedOnHome:" destination="0iD-8E-Gvd" eventType="touchUpInside" id="t70-on-Wkj"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubText" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9J-Ae-uph">
+                    <rect key="frame" x="166" y="212.5" width="44" height="14"/>
+                    <fontDescription key="fontDescription" name="Newshunt-Regular" family="Newshunt" pointSize="12"/>
+                    <color key="textColor" red="0.62745098040000002" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TAF-EY-JJt">
+                    <rect key="frame" x="178" y="279.5" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="I9J-Ae-uph" firstAttribute="centerX" secondItem="0iD-8E-Gvd" secondAttribute="centerX" id="5H8-fo-kX7"/>
+                <constraint firstItem="7uo-EW-OK2" firstAttribute="centerX" secondItem="0iD-8E-Gvd" secondAttribute="centerX" id="5ty-fC-rd7"/>
+                <constraint firstItem="TAF-EY-JJt" firstAttribute="top" secondItem="mPx-rF-hwN" secondAttribute="bottom" constant="8" id="IFg-PA-4tu"/>
+                <constraint firstItem="7uo-EW-OK2" firstAttribute="top" secondItem="0iD-8E-Gvd" secondAttribute="top" constant="60" id="OJ5-Y2-oko"/>
+                <constraint firstItem="7uo-EW-OK2" firstAttribute="height" secondItem="0iD-8E-Gvd" secondAttribute="width" multiplier="0.296" id="Owr-yg-6aF"/>
+                <constraint firstItem="fa9-WX-bn8" firstAttribute="width" secondItem="0iD-8E-Gvd" secondAttribute="width" multiplier="0.75" id="Ty6-6I-A2W"/>
+                <constraint firstItem="fa9-WX-bn8" firstAttribute="centerX" secondItem="7uo-EW-OK2" secondAttribute="centerX" id="kZg-qE-QMs"/>
+                <constraint firstItem="mPx-rF-hwN" firstAttribute="centerX" secondItem="0iD-8E-Gvd" secondAttribute="centerX" id="nsM-0g-Ggi"/>
+                <constraint firstItem="mPx-rF-hwN" firstAttribute="top" secondItem="I9J-Ae-uph" secondAttribute="bottom" constant="15" id="rwW-iO-aoi"/>
+                <constraint firstItem="I9J-Ae-uph" firstAttribute="top" secondItem="fa9-WX-bn8" secondAttribute="bottom" constant="7" id="tLL-8G-1NF"/>
+                <constraint firstItem="fa9-WX-bn8" firstAttribute="top" secondItem="7uo-EW-OK2" secondAttribute="bottom" constant="17" id="v0h-MV-GCB"/>
+                <constraint firstItem="7uo-EW-OK2" firstAttribute="width" secondItem="0iD-8E-Gvd" secondAttribute="width" multiplier="0.296" id="yRq-Jq-Aiq"/>
+                <constraint firstItem="TAF-EY-JJt" firstAttribute="centerX" secondItem="mPx-rF-hwN" secondAttribute="centerX" id="z8J-a8-UUm"/>
+            </constraints>
+            <connections>
+                <outlet property="actionButton" destination="mPx-rF-hwN" id="wdn-23-iM3"/>
+                <outlet property="activityIndicator" destination="TAF-EY-JJt" id="xmw-44-Mjs"/>
+                <outlet property="imageView" destination="7uo-EW-OK2" id="2te-fu-dSO"/>
+                <outlet property="subtitleLabel" destination="I9J-Ae-uph" id="ltF-tD-LWs"/>
+                <outlet property="titleLabel" destination="fa9-WX-bn8" id="fyp-2L-uz9"/>
+            </connections>
+            <point key="canvasLocation" x="26" y="-175"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="errrorIcon" width="95" height="95"/>
+    </resources>
+</document>
